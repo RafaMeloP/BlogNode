@@ -2,6 +2,7 @@
     const express = require('express')
     const app = express()
     const mongoose = require('mongoose')
+    const {MongoClient} = require('mongodb')
     const handlebars = require('express-handlebars')
     const flash = require('connect-flash')
     const session = require('express-session')
@@ -16,7 +17,6 @@
     const Comentario = mongoose.model('comentarios')
     const passport = require('passport')
     require('./config/auth')(passport)
-    const db = require('./config/db')
 
 //Configurações
     //session
@@ -43,7 +43,7 @@
         app.engine('handlebars', handlebars({ defaultLayout: 'main' }))
         app.set('view engine', 'handlebars')
     //Mongoose
-        mongoose.connect(db, {
+        mongoose.connect("mongodb+srv://Rafael:144000@cluster0.uvuke.mongodb.net/blog_node?retryWrites=true&w=majority", {
             useNewUrlParser: true,
             useUnifiedTopology: true
         }).then(() => console.log('Conectado com sucesso')).catch(err => console.log('Erro ao se conectar: ' + err))
