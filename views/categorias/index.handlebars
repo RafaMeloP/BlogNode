@@ -1,0 +1,11 @@
+<h1>Categorias: </h1>
+<hr>
+<div class="d-flex flex-wrap justify-content-center">
+    {{#each categorias}}
+        <a href="/categorias/postagens/{{slug}}">
+            <button type="button" class="btn btn-primary rounded-lg ml-3 mb-3"><h4>{{nome}}</h4></button>
+        </a>
+    {{else}}
+        <h4>Nenhuma categoria cadastrada...</h4>
+    {{/each}}
+</div>

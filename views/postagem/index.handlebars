@@ -1,0 +1,30 @@
+<div class="cont">
+    <div class="imagem">
+        <img src="{{postagem.img}}">
+    </div>
+    <div class="conteudo">
+        <div class="categoria">
+            <div class="box">{{postagem.categoria.nome}}</div>
+        </div>
+        <h1>{{postagem.titulo}}</h1>
+        <div class="card-body horario">
+            <i class="far fa-clock"></i>
+            {{postagem.data}}
+        </div>
+        <p>{{postagem.conteudo}}</p>
+        <hr>
+        <h2>Comentários</h2>
+        <form action="/coment/{{postagem._id}}" class="form-coment" method="post">
+            <input type="text" name="comentario" id="comentario" placeholder="Deixe um comentário" required>
+            <button type="submit" class='btn btn-primary'><i class="fas fa-paper-plane"></i></button>
+        </form>
+        {{#each comentario}}
+            <div class="comentario">
+                <h5>{{usuario.nome}}</h5>
+                <p>{{conteudo}}</p>
+            </div>
+        {{else}}
+            <h3>Nenhum comentário</h3>
+        {{/each}}
+    </div>
+</div>

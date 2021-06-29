@@ -1,0 +1,33 @@
+<div class="nav-admin">
+    <div class="item selected">
+        Categorias
+    </div>
+    <a href="/admin/postagens">
+        <div class="item">
+            Postagens
+        </div>
+    </a>
+</div>
+<div class="d-flex justify-content-between">
+    <h1>Categorias: </h1>
+    <a href="/admin/categorias/addcategorias"><button class="btn btn-primary">Adicionar</button></a>
+</div>
+<hr>
+{{#each categorias}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h1>{{nome}}</h1>
+            <p><strong>Slug:</strong> {{slug}}</p>
+            <hr>
+            <div class="d-flex justify-content-between mt-2">
+                <a href='/admin/categorias/edit/{{_id}}'><button class="btn btn-primary">Editar</button></a>
+                <form action="/admin/categorias/deletar" method="post">
+                    <input type="hidden" name="id" value={{_id}}>
+                    <button type="submit" class="btn btn-danger">Deletar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{{else}}
+    <h3>Nenhuma categoria registrada...</h3>
+{{/each}}

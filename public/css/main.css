@@ -1,0 +1,210 @@
+*{
+    box-sizing: border-box;
+}
+.postagens{
+    margin-bottom: 30px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+h2{
+    font-family: 'Roboto', sans-serif;
+}
+h3{
+    font-family: 'Roboto', sans-serif;
+}
+a:hover{
+    text-decoration: none;
+}
+.postagens .card{
+    border: none;
+    background-color: #fafafa;
+}
+.postagens .card-body{
+    display: flex;
+    padding: 0;
+}
+.imagem-postagem{
+    width: 33vw;
+    height: auto;
+}
+.imagem-postagem img{
+    width: 33vw;
+    height: 100%;
+}
+.postagens .conteudo{
+    padding: 20px;
+    transition: 400ms;
+    height: 100%;
+}
+.postagens .conteudo.usuario{
+    cursor: pointer;
+}
+.postagens .conteudo.usuario:hover{
+    background-color: #131313;
+}
+.postagens .conteudo.usuario:hover p{
+    border-left: 2px solid white;
+}
+.postagens .conteudo.usuario:hover p, .conteudo.usuario:hover h1, .conteudo.usuario:hover small, .conteudo.usuario:hover .horario{
+    color: white;
+}
+.postagens .conteudo > p{
+    font-family: 'EB Garamond', serif;
+    border-left: 2px solid black;
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 400ms;
+}
+.postagens .conteudo > h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    transition: 400ms;
+}
+.postagens .conteudo > small{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    transition: 400ms;
+}
+.horario{
+    margin-top: 20px;
+    align-items: center;
+    font-family: 'EB Garamond', serif;
+    color: rgba(53, 53, 53, 0.8);
+    transition: 400ms;
+}
+.horario > i{
+    margin-right: 10px;
+}
+.cont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.cont .imagem{
+    width: 100%;
+    height: 500px;
+}
+.cont .imagem img{
+    width: 100%;
+    height: 500px;
+}
+.cont .conteudo{
+    position: absolute;
+    left: calc(50% - (1000px / 2));
+    top: 70%;
+    width: 1000px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 4px;
+}
+.cont .conteudo .categoria .box{
+    background-color: black;
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    border-radius: 4px;
+    font-family: 'EB Garamond', serif;
+}
+.cont .conteudo h1{
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+.cont .conteudo > p{
+    font-family: 'Roboto', sans-serif;
+    line-height: 2em;
+}
+.form-coment{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.form-coment input[type='text']{
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    width: 50%;
+    font-size: 20px;
+    outline: none;
+}
+.form-coment input[type='text']:focus{
+    border-bottom: 2px solid rgb(93, 197, 245);
+}
+.form-coment button{
+    font-size: 13px;
+    margin-left: 30px;
+    padding: 5px 25px;
+}
+.comentario{
+    border-left: 2px solid rgb(58, 205, 231);
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+.nav-admin{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.nav-admin .item{
+    width: 100%;
+    padding: 20px 0;
+    background-color: #fafafa;
+    text-align: center;
+    transition: 400ms;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+.nav-admin .item.selected{
+    background-color: #a3a3a3;
+    cursor: initial;
+}
+.nav-admin .item:hover{
+    background-color: #a3a3a3;
+}
+.nav-admin a:first-child{
+    border-right: 1px solid #ccc;
+}
+.nav-admin a{
+    width: 100%;
+    text-align: center;
+}
+@media(max-width: 1051px){
+    .postagens{
+        margin: 0 auto;
+        width: 60vw;
+        margin-bottom: 20px;
+    }
+    .postagens .card{
+        width: 90%;
+    }
+    .postagens .card-body{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    .imagem-postagem img{
+        width: 54vw;
+        height: 25vw;
+    }
+    .cont .conteudo{
+        position: initial;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    .cont .imagem{
+        height: 300px;
+    }
+    .cont .imagem img{
+        height: 300px;
+    }
+}

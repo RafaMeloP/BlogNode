@@ -1,0 +1,30 @@
+<div class="jumbotron">
+    <h1 class="display-4">Blog Node</h1>
+    <p class="lead">Este é um Blog criando utlizando Node Js em conjuto com: Express + MongoDb.</p>
+</div>
+<h1>Postagens recentes: </h1>
+<hr>
+{{#each postagens}}
+    <div class="postagens">
+        <div class="card mt-2">
+            <div class="card-body">
+                <div class="imagem-postagem">
+                    <img src="{{img}}" alt="">
+                </div>
+                <a href="/postagem/{{slug}}">
+                    <div class="conteudo usuario">
+                        <p>{{categoria.nome}}</p>
+                        <h1>{{titulo}}</h1>
+                        <small>{{descricao}}</small>
+                        <div class="card-body horario">
+                            <i class="far fa-clock"></i>
+                            {{data}}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{{else}}
+    <h4>Nenhuma postagem publicada...</h4>
+{{/each}}

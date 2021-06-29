@@ -1,0 +1,15 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{/each}}
+<div class="card">
+    <div class="card-body">
+        <h1>Login: </h1>
+        <form action="/usuario/login" method="post">
+            <label for="email">E-mail: </label>
+            <input type="email" name="email" id="email" class="form-control mb-2" required>
+            <label for="senha">Senha: </label>
+            <input type="password" name="senha" id="senha" class="form-control mb-2" required>
+            <button type="submit" class="btn btn-success">Login</button>
+        </form>
+    </div>
+</div>
