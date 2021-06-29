@@ -16,7 +16,7 @@
     const Comentario = mongoose.model('comentarios')
     const passport = require('passport')
     require('./config/auth')(passport)
-    const db = require('./config/auth')
+    const db = require('./config/db')
 
 //Configurações
     //session
