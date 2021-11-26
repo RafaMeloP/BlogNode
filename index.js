@@ -17,6 +17,7 @@
     const Comentario = mongoose.model('comentarios')
     const passport = require('passport')
     require('./config/auth')(passport)
+    const {eAdmin} = require('./helpers/eAdmin')
 
 //Configurações
     //session
@@ -43,7 +44,7 @@
         app.engine('handlebars', handlebars({ defaultLayout: 'main' }))
         app.set('view engine', 'handlebars')
     //Mongoose
-        mongoose.connect("mongodb+srv://Rafael:144000@cluster0.uvuke.mongodb.net/blog_node?retryWrites=true&w=majority", {
+        mongoose.connect("mongodb+srv://Rafael:144000@cluster0.uvuke.mongodb.net/BlogNode", {
             useNewUrlParser: true,
             useUnifiedTopology: true
         }).then(() => console.log('Conectado com sucesso')).catch(err => console.log('Erro ao se conectar: ' + err))
@@ -51,7 +52,10 @@
         app.use(express.static(path.join(__dirname, 'public')))
 
 //Rotas
-    app.get('/', (req, res) => {
+    app.get('/', eAdmin, (req, res) => {
+        res.redirect('/admin/postagens')
+    })
+    app.get('/postagens', (req, res) => {
         Postagem.find().populate('categoria').sort({ data: 'desc' }).lean().then(postagens => {
             res.render('index', { postagens: postagens })
         }).catch(err => {
@@ -132,5 +136,5 @@
     app.use('/usuario', usuario)
 
 //Outros
-    const PORT = process.env.PORT || 8000
+    const PORT = process.env.PORT || 8060
     app.listen(PORT)

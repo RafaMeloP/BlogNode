@@ -37,7 +37,8 @@
                         const novoUsuario = {
                             nome: req.body.nome,
                             email: req.body.email,
-                            senha: hash
+                            senha: hash,
+                            eAdmin:1
                         }
                         new Usuario(novoUsuario).save().then(() => {
                             req.flash('success_msg', 'Cadastrado com sucesso')

@@ -170,9 +170,6 @@ a:hover{
 .nav-admin .item:hover{
     background-color: #a3a3a3;
 }
-.nav-admin a:first-child{
-    border-right: 1px solid #ccc;
-}
 .nav-admin a{
     width: 100%;
     text-align: center;
